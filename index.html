@@ -193,19 +193,17 @@
 console.log("Sending payload:", payload); // Add this before ajax call
 
         $.ajax({
-          url: "https://script.google.com/macros/s/AKfycbwNpv2Goa-XRHJlNuj5TusMCHJIsM7sh5JNQ5o4M8cjG2nhs6mDqCjpj5ZL5-M3YcYW/exec",
-          method: "POST",
-          contentType: "application/json",
-          data: JSON.stringify(payload),
-          success: function () {
-            $('#formArea').hide();
-            $('#thankYouMessage').show();
-          },
-		  error: function (err) {
-    console.error("Submission error:", err); // Add this to catch errors
+  url: API_URL + "?" + new URLSearchParams(payload).toString(),
+  method: "GET",
+  success: function () {
+    $('#formArea').hide();
+    $('#thankYouMessage').show();
+  },
+  error: function (err) {
+    console.error("Submission error:", err);
   }
+});
 
-        });
       });
 
       $('#resetBtn').click(function () {
