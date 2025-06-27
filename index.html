@@ -190,17 +190,16 @@
           teamMember: $('#teamMember').val()
         };
         $.ajax({
-  url: API_URL + "?" + new URLSearchParams(payload).toString(),
-  method: "GET",
-  success: function () {
-    $('#formArea').hide();
-    $('#thankYouMessage').show();
-  },
-  error: function (err) {
-    console.error("Submission error:", err);
-  }
-});
-
+          url: API_URL + "?" + new URLSearchParams(payload).toString(),
+          method: "GET",
+          success: function () {
+            $('#formArea').hide();
+            $('#thankYouMessage').show();
+          },
+          error: function (err) {
+            console.error("Submission error:", err);
+          }
+        });
       });
 
       $('#resetBtn').click(function () {
