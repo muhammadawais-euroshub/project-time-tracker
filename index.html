@@ -84,11 +84,11 @@
 
   <script>
     $(document).ready(function () {
-     // const DATA_API_URL = "https://script.google.com/macros/s/AKfycby6znhAKJUNM854IrUCuP4H-eKwGCOCEjRtlp346l9xaYitiiAddBBsHm5d1ovKwl2J/exec"; // Replace with your actual URL
+     const DATA_API_URL = "https://script.google.com/macros/s/AKfycby6znhAKJUNM854IrUCuP4H-eKwGCOCEjRtlp346l9xaYitiiAddBBsHm5d1ovKwl2J/exec?mode=dropdown"; // Replace with your actual URL
      const SUBMIT_API_URL = "https://script.google.com/macros/s/AKfycbwNpv2Goa-XRHJlNuj5TusMCHJIsM7sh5JNQ5o4M8cjG2nhs6mDqCjpj5ZL5-M3YcYW/exec";
       
       function populateDropdowns() {
-        $.get(SUBMIT_API_URL, function (response) {
+        $.get(DATA_API_URL, function (response) {
           const data = typeof response === 'string' ? JSON.parse(response) : response;
 
           $('#profileName').empty().append(new Option("Select Profile", "", true, true));
