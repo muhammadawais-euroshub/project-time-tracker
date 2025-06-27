@@ -194,7 +194,7 @@
         console.log("Payload:", payload);
         
         $.ajax({
-          console.log(SUBMIT_API_URL + "?" + new URLSearchParams(payload).toString());
+          //console.log(SUBMIT_API_URL + "?" + new URLSearchParams(payload).toString());
           url: SUBMIT_API_URL + "?" + new URLSearchParams(payload).toString(),
           method: "GET",
           success: function () {
