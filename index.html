@@ -189,9 +189,6 @@
           totalTime: $('#totalTimeLabel').text(),
           teamMember: $('#teamMember').val()
         };
-
-console.log("Sending payload:", payload); // Add this before ajax call
-
         $.ajax({
   url: API_URL + "?" + new URLSearchParams(payload).toString(),
   method: "GET",
