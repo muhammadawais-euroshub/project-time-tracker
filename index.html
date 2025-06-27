@@ -84,11 +84,11 @@
 
   <script>
     $(document).ready(function () {
-     //const DATA_API_URL = "https://script.google.com/macros/s/AKfycbwNpv2Goa-XRHJlNuj5TusMCHJIsM7sh5JNQ5o4M8cjG2nhs6mDqCjpj5ZL5-M3YcYW/exec?mode=dropdown"; // Replace with your actual URL
-     const API_URL = "https://script.google.com/macros/s/AKfycbwNpv2Goa-XRHJlNuj5TusMCHJIsM7sh5JNQ5o4M8cjG2nhs6mDqCjpj5ZL5-M3YcYW/exec";
+     const DATA_API_URL = "https://script.google.com/macros/s/AKfycbwNpv2Goa-XRHJlNuj5TusMCHJIsM7sh5JNQ5o4M8cjG2nhs6mDqCjpj5ZL5-M3YcYW/exec"; // Replace with your actual URL
+     const SUBMIT_API_URL = "https://script.google.com/macros/s/AKfycbwNpv2Goa-XRHJlNuj5TusMCHJIsM7sh5JNQ5o4M8cjG2nhs6mDqCjpj5ZL5-M3YcYW/exec";
       
       function populateDropdowns() {
-        $.get(API_URL, function (response) {
+        $.get(DATA_API_URL, function (response) {
           const data = typeof response === 'string' ? JSON.parse(response) : response;
 
           $('#profileName').empty().append(new Option("Select Profile", "", true, true));
@@ -191,7 +191,7 @@
           teamMember: $('#teamMember').val()
         };
         $.ajax({
-          console.log(API_URL + "?" + new URLSearchParams(payload).toString());
+          console.log(SUBMIT_API_URL + "?" + new URLSearchParams(payload).toString());
           //url: SUBMIT_API_URL + "?" + new URLSearchParams(payload).toString(),
           method: "GET",
           success: function () {
